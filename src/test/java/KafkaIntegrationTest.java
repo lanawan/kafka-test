@@ -20,11 +20,8 @@ import org.testcontainers.utility.DockerImageName;
 import java.time.Duration;
 import java.util.Collections;
 import java.util.Properties;
-import java.util.concurrent.CopyOnWriteArrayList;
-
-import org.junit.jupiter.api.Test;
-
 import java.util.concurrent.ConcurrentHashMap;
+import java.util.concurrent.CopyOnWriteArrayList;
 import java.util.concurrent.atomic.AtomicInteger;
 
 import static org.assertj.core.api.Assertions.assertThat;
