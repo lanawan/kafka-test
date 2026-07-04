@@ -1,0 +1,18 @@
+<configuration>
+    <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <!-- [%thread] покажет, какой именно поток (основной или фоновый консьюмер) пишет лог -->
+            <pattern>%d{HH:mm:ss.SSS} [%thread] %highlight(%-5level) %cyan(%logger{15}) - %msg%n</pattern>
+        </encoder>
+    </appender>
+
+    <!-- Приглушаем технический спам от самой Kafka и Testcontainers, оставляя только важные ошибки -->
+    <logger name="org.apache.kafka" level="WARN"/>
+    <logger name="org.testcontainers" level="INFO"/>
+    <logger name="com.github.dockerjava" level="WARN"/>
+
+    <!-- Наш уровень логирования для тестов -->
+    <root level="INFO">
+        <appender-ref ref="STDOUT" />
+    </root>
+</configuration>
